@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rebeca Rávila - Social Media, Branding e Posicionamento Digital." />
+  <title>Rebeca Rávila | Social Media de Empreendedoras</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      --wine: #5b0f1a;
+      --wine-light: #7c1b2c;
+      --beige: #e7d8c9;
+      --offwhite: #f8f5f1;
+      --black: #171717;
+      --gold: #c7a56a;
+      --gray: #6f6f6f;
+      --shadow: 0 20px 60px rgba(0,0,0,.12);
+      --radius: 24px;
+      --transition: all .4s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--offwhite);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: .5px;
+    }
+
+    section {
+      padding: 110px 8%;
+    }
+
+    .section-title {
+      font-size: 3.2rem;
+      margin-bottom: 18px;
+      color: var(--wine);
+    }
+
+    .section-subtitle {
+      max-width: 650px;
+      line-height: 1.8;
+      color: var(--gray);
+      margin-bottom: 60px;
+    }
+
+    /* HEADER */
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      backdrop-filter: blur(12px);
+      background: rgba(248,245,241,.75);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 8%;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--wine);
+      font-weight: 700;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--black);
+      font-size: .95rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    nav ul li a:hover {
+      color: var(--wine);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 60px;
+      background:
+      radial-gradient(circle at top right, rgba(91,15,26,.12), transparent 30%),
+      var(--offwhite);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(199,165,106,.08);
+      border-radius: 50%;
+      right: -150px;
+      top: -150px;
+    }
+
+    .hero-content {
+      animation: fadeUp 1s ease;
+    }
+
+    .hero-content span {
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: .85rem;
+      font-weight: 600;
+    }
+
+    .hero-content h1 {
+      font-size: 5rem;
+      line-height: .95;
+      margin: 20px 0;
+      color: var(--wine);
+    }
+
+    .hero-content p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--gray);
+      max-width: 560px;
+      margin-bottom: 38px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      border-radius: 100px;
+      border: none;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: var(--wine);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: var(--wine-light);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(0,0,0,.1);
+      color: var(--black);
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      transform: translateY(-3px);
+    }
+
+    .hero-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 34px;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-content p {
+      line-height: 2;
+      color: var(--gray);
+      margin-bottom: 22px;
+    }
+
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 35px;
+      border-radius: var(--radius);
+      transition: var(--transition);
+      box-shadow: 0 10px 30px rgba(0,0,0,.05);
+      border: 1px solid rgba(0,0,0,.04);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card i {
+      font-size: 1.6rem;
+      color: var(--wine);
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 16px;
+      font-size: 1.8rem;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      cursor: pointer;
+      height: 380px;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.75), transparent);
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 30px;
+      color: white;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 35px;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,.05);
+    }
+
+    .testimonial-card p {
+      line-height: 1.9;
+      color: var(--gray);
+      margin-bottom: 22px;
+    }
+
+    .testimonial-card h4 {
+      color: var(--wine);
+      font-size: 1.5rem;
+    }
+
+    /* FORM */
+
+    .contact-wrapper {
+      background: white;
+      padding: 60px;
+      border-radius: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .full {
+      grid-column: span 2;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,.08);
+      background: #faf8f6;
+      font-family: inherit;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--wine);
+      background: white;
+    }
+
+    textarea {
+      resize: none;
+      min-height: 150px;
+    }
+
+    /* CONTACT */
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 28px;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.05);
+      transition: var(--transition);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .contact-card i {
+      color: var(--wine);
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--wine);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer p {
+      opacity: .8;
+    }
+
+    /* ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all .8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%,100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 980px) {
+      .hero,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 3.8rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      .full {
+        grid-column: span 1;
+      }
+    }
+
+    @media(max-width: 600px) {
+      section {
+        padding: 90px 7%;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+      .contact-wrapper {
+        padding: 35px 25px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Rebeca Rávila</div>
+
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <span>Social Media • Branding • Estratégia</span>
+    <h1>Rebeca<br>Rávila</h1>
+
+    <p>
+      Social Media • Estratégia • Posicionamento Digital.<br>
+      Transformo perfis com estratégia, identidade e constância.
+    </p>
+
+    <div class="buttons">
+      <a href="#formulario" class="btn btn-primary">
+        <i class="fa-solid fa-paper-plane"></i>
+        Solicitar orçamento
+      </a>
+
+      <a href="https://www.instagram.com/rebcaworks/" target="_blank" class="btn btn-secondary">
+        <i class="fa-solid fa-briefcase"></i>
+        Ver portfólio
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="f582f1ee-43a9-4732-ae6c-1a6ae10a910b.png" alt="Rebeca Rávila">
+  </div>
+</section>
+
+<section id="sobre" class="reveal">
+  <div class="about">
+    <div class="about-image">
+      <img src="f582f1ee-43a9-4732-ae6c-1a6ae10a910b.png" alt="Sobre Rebeca">
+    </div>
+
+    <div class="about-content">
+      <h2 class="section-title">Sobre Mim</h2>
+
+      <p>
+        Sou Rebeca Rávila, estrategista digital e Social Media apaixonada por posicionamento, branding e construção de marcas femininas autênticas.
+      </p>
+
+      <p>
+        Minha formação em Administração fortaleceu minha visão estratégica, permitindo unir criatividade, marketing, design e comportamento digital para criar presenças fortes e memoráveis.
+      </p>
+
+      <p>
+        Mais do que criar conteúdo bonito, acredito em comunicação com intenção, identidade e constância — transformando perfis em marcas que geram conexão, autoridade e valor.
+      </p>
+
+      <p>
+        Acima de qualquer estratégia, acredito em propósito. Jesus Cristo é o centro da minha vida e da forma como conduzo meu trabalho, meus valores e minha comunicação. Busco construir marcas com verdade, excelência e autenticidade.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" class="reveal">
+  <h2 class="section-title">Serviços</h2>
+  <p class="section-subtitle">
+    Estratégias criadas para marcas que desejam crescer com posicionamento, estética refinada e presença digital profissional.
+  </p>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <i class="fa-solid fa-camera-retro"></i>
+      <h3>Social Media</h3>
+      <p>Gestão estratégica de redes sociais com foco em posicionamento, autoridade e crescimento orgânico.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fa-solid fa-chart-line"></i>
+      <h3>Branding</h3>
+      <p>Construção de identidade visual e percepção de marca alinhada ao posicionamento desejado.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fa-solid fa-palette"></i>
+      <h3>Design Digital</h3>
+      <p>Criação de artes sofisticadas e profissionais para fortalecer sua presença visual online.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fa-solid fa-lightbulb"></i>
+      <h3>Estratégia</h3>
+      <p>Planejamento de conteúdo com foco em conexão, consistência e crescimento inteligente.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="portfolio" class="reveal">
+  <h2 class="section-title">Portfólio</h2>
+  <p class="section-subtitle">
+    Projetos desenvolvidos com estratégia, estética premium e identidade visual sofisticada.
+  </p>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-item">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Projeto">
+
+      <div class="portfolio-overlay">
+        <h3>Branding Feminino</h3>
+        <p>Identidade visual estratégica</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Projeto">
+
+      <div class="portfolio-overlay">
+        <h3>Gestão de Instagram</h3>
+        <p>Conteúdo com posicionamento</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop" alt="Projeto">
+
+      <div class="portfolio-overlay">
+        <h3>Estratégia Digital</h3>
+        <p>Marcas com presença premium</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Depoimentos</h2>
+
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card">
+      <p>
+        “A identidade visual criada pela Rebeca elevou completamente a percepção da minha marca. Tudo ficou sofisticado e alinhado.”
+      </p>
+
+      <h4>Marca Feminina</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        “Ela conseguiu transformar minhas ideias em uma presença digital estratégica, elegante e extremamente profissional.”
+      </p>
+
+      <h4>Cliente Estratégica</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        “A Rebeca conseguiu transformar completamente minha presença digital. Hoje minha marca transmite profissionalismo e identidade.”
+      </p>
+
+      <h4>Cliente Premium</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        “Além de criatividade, ela entrega estratégia. Meu Instagram ficou mais sofisticado, organizado e profissional.”
+      </p>
+
+      <h4>Empreendedora</h4>
+    </div>
+
+  </div>
+</section>
+
+<section id="formulario" class="reveal">
+  <div class="contact-wrapper">
+
+    <h2 class="section-title">Solicitar Orçamento</h2>
+
+    <p class="section-subtitle">
+      Preencha as informações abaixo para iniciar um projeto estratégico e personalizado para sua marca.
+    </p>
+
+    <form>
+      <input type="text" placeholder="Seu nome">
+      <input type="text" placeholder="Empresa">
+
+      <input type="text" placeholder="Instagram">
+      <input type="text" placeholder="WhatsApp">
+
+      <select>
+        <option>Tipo de serviço</option>
+        <option>Social Media</option>
+        <option>Branding</option>
+        <option>Consultoria</option>
+      </select>
+
+      <input type="text" placeholder="Público-alvo">
+
+      <textarea class="full" placeholder="Objetivo da marca e mensagem adicional"></textarea>
+
+      <button class="btn btn-primary full">
+        <i class="fa-solid fa-paper-plane"></i>
+        Enviar solicitação
+      </button>
+    </form>
+  </div>
+</section>
+
+<section id="contato" class="reveal">
+  <h2 class="section-title">Contato</h2>
+
+  <div class="contact-cards">
+
+    <div class="contact-card">
+      <i class="fa-brands fa-instagram"></i>
+      <h3>Instagram</h3>
+      <p>@rebcaravila</p>
+    </div>
+
+    <div class="contact-card">
+      <i class="fa-brands fa-whatsapp"></i>
+      <h3>WhatsApp</h3>
+      <p>(63) 99129-7243</p>
+    </div>
+
+    <div class="contact-card">
+      <i class="fa-regular fa-envelope"></i>
+      <h3>E-mail</h3>
+      <p>rebcaravila@gmail.com</p>
+    </div>
+
+    <div class="contact-card">
+      <i class="fa-solid fa-location-dot"></i>
+      <h3>Localização</h3>
+      <p>Tocantins, Brasil</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <h3>Rebeca Rávila</h3>
+  <br>
+  <p>Social Media • Branding • Posicionamento Digital</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  window.addEventListener('scroll', () => {
+    reveals.forEach(reveal => {
+      const windowHeight = window.innerHeight;
+      const revealTop = reveal.getBoundingClientRect().top;
+      const revealPoint = 100;
+
+      if(revealTop < windowHeight - revealPoint) {
+        reveal.classList.add('active');
+      }
+    })
+  })
+</script>
+
+</body>
+</html>
